@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>SimpleMessages.Web</AssemblyName>
+    <RootNamespace>SimpleMessages.Web</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-alpha2-final" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleMessages.Domain\SimpleMessages.Domain.csproj">
+      <Project>{26B83554-21DC-426E-9E83-A5F497C73C08}</Project>
+      <Name>SimpleMessages.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleMessages.Jobs\SimpleMessages.Jobs.csproj">
+      <Project>{E7BCF5B2-57BC-4CFF-B5C4-94DB0588E8B7}</Project>
+      <Name>SimpleMessages.Jobs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Controllers\ValuesController.cs~" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hubs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FluentScheduler, Version=5.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\.nuget\packages\fluentscheduler\5.3.0\lib\netstandard1.4\FluentScheduler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
